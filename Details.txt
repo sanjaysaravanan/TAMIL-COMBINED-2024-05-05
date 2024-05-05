@@ -117,7 +117,7 @@ Task:
       BLOB(size) / TEXT (CDN URL)- images/vidoes
     
 Download MongoDB: windows download MSI
-  Must Install: 
+  Lets Install Next Download and Keep it : 
     Server:
       https://www.mongodb.com/try/download/community ( Comes along with Compass)
     Shell:
