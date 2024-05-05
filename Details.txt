@@ -1,0 +1,128 @@
+
+Topics:
+
+  0. Null in sql
+
+  1. aggregate function:
+    max, sum, min, count
+
+      id    stu_id    sub_id    date    mark
+      1     1          1         24     98
+      1     2          2         24     97
+      1     1          1         24     98
+      1     2          2         24     97
+      
+  2. alias:
+    as syntax to convert the column name
+
+    1. Find the max year an enginerr worked in the studio
+
+  3. group by:
+    aggregate function by combing row with condition
+    Reference: https://sqlbolt.com/lesson/select_queries_with_aggregates
+
+  READ
+  Joins in SQL:
+    Joins are used to retrieve data from 2 or more related tables. In general
+    tables are related to each other with foreign key constraints
+
+    Use Col_Name like,
+      <table_name>.<col_name>
+      Eg: Student.name, Teacher.name, Teacher.Subject, Student.Mark
+
+    Normalization:
+      Storing different component in different table and relating them together
+      with a foreign key.
+
+      Process of removing repeating data is also called normalization.
+    
+    Order of Execution of SQL Statements:
+      https://sqlbolt.com/lesson/select_queries_order_of_execution
+
+    Inner Join:
+
+      SELECT column, another_table_column, …
+      FROM mytable
+      INNER/LEFT/RIGHT/FULL JOIN another_table 
+          ON mytable.id = another_table.id
+      WHERE condition(s)
+      ORDER BY column, … ASC/DESC
+      LIMIT num_limit OFFSET num_offset;
+
+    
+    Outer Join:
+      LEFT
+      RIGHT
+      FULL
+
+  CREATE:
+  insert:
+    INSERT INTO tablename
+    (column, another_column, …)
+    VALUES (value_or_expr, another_value_or_expr, …),
+          (value_or_expr_2, another_value_or_expr_2, …),
+          …;
+
+  UPDATE:
+    UPDATE mytable
+    SET column = value_or_expr, 
+        other_column = another_value_or_expr, 
+        …
+    WHERE condition;
+
+    change director for a movie
+
+    update movies set Director='John Lasseter' where Title="A Bug's Life";
+    
+  DELETE:
+    DELETE FROM mytable
+    WHERE condition;
+
+  Zombie Data:
+    a data/row/entry We assume that this sort of row will not present in table, 
+    but it is actually present
+
+Task:
+  Day-29: Complete all the lessons in SQLBolt and Submit the Green Check Mark Screenshot for all the lessons in a github repository
+
+  Day-30: Design a DB for ZenClass Portal:
+    Users ( candidate, mentor )
+    Classes ( Title, timing, isEnded )
+    Task ( Title, Tag )
+    Queries ( title, description, tag, date, language, time )
+    Events ( Hackathon, Any placement session )
+
+    relate the entities using the link table concept ( name the linking table in proper way )
+
+  Design a DB for IMDB ( Optional to Submit, but please practice )
+
+    Desing the DB Tables and Realtionships like below,
+
+    Movies (
+      id INT,
+      title TEXT,
+      ...
+    );
+    Genre (
+      id INT,
+      movie_id INT,
+      ...
+    );
+
+    Movie --> Many Genres
+
+    Storing image or video:
+      blob --> 
+        https://stackoverflow.com/questions/6472233/can-i-store-images-in-mysql
+      BLOB(size) / TEXT (CDN URL)- images/vidoes
+    
+Download MongoDB: windows download MSI
+  Must Install: 
+    Server:
+      https://www.mongodb.com/try/download/community ( Comes along with Compass)
+    Shell:
+      https://www.mongodb.com/try/download/shell
+  
+  If Compass is not available after Server Installation:
+    Install Compass:
+      https://www.mongodb.com/try/download/compass
